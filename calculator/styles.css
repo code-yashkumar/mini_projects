@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(243deg, #707070 0.46%, #E6E6E6 99.64%);
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    color: #FFF;
+    margin: 20px 0 10px;
+
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #000;
+
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.calc{
+    width: 475px;
+    height: 550px;
+    margin: auto;
+    padding: 20px;
+border-radius: 42.045px;
+border: 3px solid #FFF;
+background: rgba(0, 0, 0, 0.47);
+}
