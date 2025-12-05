@@ -51,7 +51,7 @@ h1 {
     display: flex;
     align-items: center;
     width: auto;
-    padding: 22.038px 28.263px 24.488px 29.263px;
+    padding: 2em;
     justify-content: center;
     align-items: center;
     justify-self: center;
@@ -61,15 +61,22 @@ h1 {
 .nums{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    align-items: center;  
+    grid-gap: 15px;
+    align-items: center;
+    margin: 1em; 
 }
 
 .oper{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    align-items: center;
+    gap: 1em;  
+}
+
+.basic{
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    margin-left: 10px;
-    align-items: center;  
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;  
 }
 
