@@ -1,9 +1,12 @@
 :root {
-  --pr-O: #3b82f6;
-  --pr-X: #ef4444;
+  --pr-O: #ffae00;
+  --pr-X: #3b87ea;
   --bg: #F1F3E0;
+  --box: #D2DCB6;
+  --myAcc: #c4ceac;
+  --accent: #A1BC98;
   --heading: #778873;
-  --text: #111111;
+  --text: #000000;
   
   /* Neutral scale */
   --gray-100: #f5f5f5;
@@ -17,4 +20,53 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
 
+h1{
+    color: var(--heading);
+    margin-bottom: 2vmin;
+    font-size: 8vmin;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vmin;
+  /* background-color: var(--accent); */
+  padding: 1vmin;
+  width: fit-content;
+  height: fit-content;
+}
+
+.cell {
+  width: 18vmin;
+  height: 18vmin;
+  background:  var(--box);
+  border: none;
+  box-shadow: var(--gray-300) 2px 2px 5px; /* fix shadow later */
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: var(--myAcc);
+}
+
+#rst-btn {
+    margin-top: 3vmin;
+    padding: 1vmin 3vmin;
+    font-size: 4vmin;
+    background-color: var(--accent);
+    border: none;
+    color: var(--bg);
+    cursor: pointer;
+    box-shadow: var(--gray-300) 2px 2px 5px;
+}
