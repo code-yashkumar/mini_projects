@@ -73,6 +73,8 @@ h1{
   box-shadow: var(--gray-300) 2px 2px 5px; /* fix shadow later */
   cursor: pointer;
   border-radius: 1vmin;
+  font-size: 10vmin;
+  font-weight: 600;
 }
 
 .cell:hover {
