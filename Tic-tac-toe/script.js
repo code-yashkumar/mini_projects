@@ -14,7 +14,7 @@ const winComb=[
     [6,7,8]
 ];
 
-
+let moveCount=0;
 cells.forEach((cell) => {
     cell.addEventListener("click", ()=>{
         console.log("cell clicked");
@@ -22,6 +22,11 @@ cells.forEach((cell) => {
         turn=!turn;
         cell.disabled=true;
         checkWin();
+        moveCount++;
+        if(moveCount===9){
+            alert("It's a Draw!");
+        }
+
     });
 });
 
@@ -38,3 +43,16 @@ const checkWin=()=>{
         }
     }
 };
+
+rst.addEventListener("click", ()=>{
+    cells.forEach((cell)=>{
+        cell.innerText="";
+        cell.disabled=false;
+    })
+    turn=true;
+});
+
+
+
+// When we have winner then option to have a new game or cancel
+// announce winner better way

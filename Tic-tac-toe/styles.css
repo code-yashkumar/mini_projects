@@ -55,6 +55,18 @@ h1{
     font-size: 8vmin;
 }
 
+.announcement {
+    padding: 1vmin 3vmin;
+    color :white;
+    border-radius: 4vmin;
+    margin-bottom: 2vmin;
+    font-size: 4vmin;
+    font-weight: 600;
+    background-color: var(--accent);
+    visibility: hidden;
+}
+
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
