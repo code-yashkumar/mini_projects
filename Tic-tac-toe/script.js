@@ -1,5 +1,7 @@
 let cells=document.querySelectorAll(".cell");
 let rst=document.getElementById("rst-btn");
+let announce=document.querySelector(".announcement");
+let currentPlayerSpan=document.getElementById("current-player");
 
 let turn=true; //true for X and false for O
 
@@ -36,10 +38,13 @@ const checkWin=()=>{
         let p2=cells[pattern[1]].innerText;
         let p3=cells[pattern[2]].innerText;
         if(p1!=="" && p1===p2 && p2===p3){
-            let winner="";
-            if(!turn) winner="Player 1 (X) wins";
-            else winner="Player 2 (O) wins";
-            alert(winner);
+            if(!turn){
+                currentPlayerSpan.innerText="1 (X)";
+            }
+            else{
+                currentPlayerSpan.innerText="2 (O)";
+            }
+            announce.style.display="block";
         }
     }
 };
@@ -50,6 +55,8 @@ rst.addEventListener("click", ()=>{
         cell.disabled=false;
     })
     turn=true;
+    moveCount=0;
+    announce.style.display="none";
 });
 
 

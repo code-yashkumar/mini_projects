@@ -63,7 +63,7 @@ h1{
     font-size: 4vmin;
     font-weight: 600;
     background-color: var(--accent);
-    visibility: hidden;
+    display: none;
 }
 
 
