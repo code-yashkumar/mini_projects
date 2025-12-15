@@ -5,7 +5,7 @@
 }
 
 
-body {
+/* body {
     background: rgb(1, 4, 9);
     min-height: 100vh;
 }
@@ -48,8 +48,7 @@ h1 {
 
 
 .buttons{
-    /* padding: 2em; */
-    /* background-color: rgb(119, 165, 11); */
+
     display: flex;
     align-items: center;
     width: auto;
@@ -118,7 +117,7 @@ h1 {
     width: 3em;
 }
 .oper .equals {
-    /* background: #003931; */
+    
     border-radius: 3em;
     color: rgb(253, 253, 253);
     width: 2.5em;
@@ -135,4 +134,4 @@ h1 {
 #input{
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    } */
