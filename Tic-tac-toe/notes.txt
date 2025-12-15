@@ -1,3 +1,0 @@
-have different cursor for both X O user.
-
-implement points system and and 2 users 

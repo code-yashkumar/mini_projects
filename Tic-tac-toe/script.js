@@ -1,7 +1,6 @@
 let cells=document.querySelectorAll(".cell");
 let rst=document.getElementById("rst-btn");
 let announce=document.querySelector(".announcement");
-let currentPlayerSpan=document.getElementById("current-player");
 
 let turn=true; //true for X and false for O
 
@@ -26,7 +25,8 @@ cells.forEach((cell) => {
         checkWin();
         moveCount++;
         if(moveCount===9){
-            alert("It's a Draw!");
+            announce.innerText="It's a Draw!";
+            announce.style.display="block";
         }
 
     });
@@ -39,10 +39,10 @@ const checkWin=()=>{
         let p3=cells[pattern[2]].innerText;
         if(p1!=="" && p1===p2 && p2===p3){
             if(!turn){
-                currentPlayerSpan.innerText="1 (X)";
+                announce.innerText="Player 1 (X) wins!";
             }
             else{
-                currentPlayerSpan.innerText="2 (O)";
+                announce.innerText="Player 2 (O) wins!";
             }
             announce.style.display="block";
         }
@@ -58,8 +58,3 @@ rst.addEventListener("click", ()=>{
     moveCount=0;
     announce.style.display="none";
 });
-
-
-
-// When we have winner then option to have a new game or cancel
-// announce winner better way
