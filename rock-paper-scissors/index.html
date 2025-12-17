@@ -7,18 +7,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <div class="profiles">
-        <div class="player">
-            <div class="img-container"></div>
-            <h3>Player</h3>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <div class="scoreBoard">
+        <div class="playerScore">Player: 0</div>
+        <div class="vs">vs</div>
+        <div class="computerScore">Computer: 0</div>
+    </div>
+    <div class="playerSection">
+        <h3>SELECT YOUR WEAPON</h3>
+        <div class="rockContainer">
+            <div class="imgContainer">
+                <img id="rock" src="assets/rock.png" alt="Rock">
+            </div>
+            <p class="buttonText">Rock</p>
         </div>
-        <div class="computer">
-            <div class="img-container"></div>
-            <h3>Computer</h3>
+        <div class="paperContainer">
+            <div class="imgContainer">
+                <img id="paper" src="assets/paper.png" alt="Paper">
+            </div>
+            <p class="buttonText">Paper</p>
+        </div>
+        <div class="scissorsContainer">
+            <div class="imgContainer">
+                <img id="scissors" src="assets/scissors.png" alt="Scissors">
+            </div>
+            <p class="buttonText">Scissors</p>
         </div>
     </div>
-
+    <div class="computerSection">
+        <div class="roboMoveContainer">
+            <div class="imgContainer roboMoveImg">
+                <img id="roboMove" src="assets/robo_mf.png" alt="Robot Move">
+            </div>
+            <p class="buttonText roboMoveText">Computer's Move</p>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
