@@ -118,6 +118,12 @@ h3{
     align-items: center;
 }
 
+.container:hover{
+    background: linear-gradient(180deg, rgba(0, 123, 255, 0.50) 0%, rgba(0, 84, 173, 0.50) 51.44%, rgba(0, 47, 97, 0.50) 100%);
+    box-shadow: 0 0 0.7rem #00A1FF;
+    transition: all 0.2s ease-in-out;
+}
+
 .imgContainer{
     width: 4.25rem;
     height: 4.25rem;
