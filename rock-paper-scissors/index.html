@@ -11,26 +11,45 @@
 <body>
     <h1>ROCK PAPER SCISSORS</h1>
     <div class="scoreBoard">
-        <div class="playerScore">Player : <span id="pScore">0</span></div>
+        <div class="playerScore">Player : <span id="uScore">0</span></div>
         <div class="vs">v/s</div>
         <div class="computerScore">Computer : <span id="cScore">0</span></div>
+
+        <div class="roundSelector">
+        <button class="roundToggle" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="49" viewBox="0 0 40 49" fill="none">
+                <path d="M36.7686 22.7858C37.7054 23.3737 37.7054 24.7389 36.7686 25.3268L4.79688 45.3766C3.79788 46.0031 2.5 45.2853 2.5 44.1061V4.00647C2.5 2.82729 3.79789 2.10948 4.79688 2.73596L36.7686 22.7858Z" stroke="#3EC5FF" stroke-width="5"/>
+            </svg>
+        </button>
+
+        <div class="roundCard">
+            <p class="roundTitle">Rounds</p>
+            <button data-rounds="3">Best of 3</button>
+            <button data-rounds="5">Best of 5</button>
+            <button data-rounds="7">Best of 7</button>
+        </div>
     </div>
+    </div>
+
+    
+
+
     <section class="playArea">
         <div class="playerSection">
             <h3>SELECT YOUR WEAPON</h3>
-            <button class="container" id="rock">
+            <button class="container" data-move="rock">
                 <div class="imgContainer">
                     <img class="oimg" src="assets/rock.png" alt="Rock">
                 </div>
                 <p class="buttonText">Rock</p>
             </button>
-            <button class="container" id="paper">
+            <button class="container" data-move="paper">
                 <div class="imgContainer">
                     <img class="oimg" src="assets/paper.png" alt="Paper">
                 </div>
                 <p class="buttonText">Paper</p>
             </button>
-            <button class="container" id="scissors">
+            <button class="container" data-move="scissors">
                 <div class="imgContainer">
                     <img class="oimg" src="assets/scissors.png" alt="Scissors">
                 </div>
@@ -46,6 +65,15 @@
             </div>
         </div>
     </section>
+
+    <!-- Round Message -->
+    <div id="roundMessage"></div>
+
+     <!-- Game Over Overlay -->
+    <div id="gameOverlay" hidden>
+        <p id="gameResultText"></p>
+        <button id="restartGameBtn">Restart Game</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,48 +1,21 @@
-// ai generated code for toggling round selector menu
+
+// === DOM REFERENCES ===
 
 const roundSelector = document.querySelector(".roundSelector");
 const toggleBtn = document.querySelector(".roundToggle");
 
-toggleBtn.addEventListener("click", () => {
-  roundSelector.classList.toggle("open");
+const choices =document.querySelectorAll('[data-move]');
+let uScore=document.getElementById("uScore");
+let cScore=document.getElementById("cScore");
 
-  const expanded = roundSelector.classList.contains("open");
-  toggleBtn.setAttribute("aria-expanded", expanded);
-});
-
-
-//resets the game
-function resetGame() {
-    console.log("Resetting game...");
-  // Reset scores and game state here
-    gameState.userScore = 0;
-    gameState.compScore = 0;
-    gameState.isOver = false;
-
-    uScore.innerText = 0;
-    cScore.innerText = 0;
-    showRoundMessage("");
-}
+const roundMessage=document.getElementById("roundMessage");
+const gameOverlay=document.getElementById("gameOverlay");
+const gameResultText=document.getElementById("gameResultText");
+const restartGameBtn=document.getElementById("restartGameBtn");
 
 
-document.querySelectorAll("[data-rounds]").forEach(btn => {
-    btn.addEventListener("click", () => {
-    const rounds = Number(btn.dataset.rounds);
-    console.log("Game rounds:", rounds);
 
-    gameState.maxRounds = rounds;
-    gameState.winsNeeded = Math.ceil(rounds / 2);
-    resetGame()
-
-    // close menu
-    roundSelector.classList.remove("open");
-  });
-});
-
-// my code starts here
-
-
-//stores game state
+// === GAME STATE ===
 const gameState={
     maxRounds: 3,
     winsNeeded:2,
@@ -52,15 +25,8 @@ const gameState={
 };
 
 
-const choices =document.querySelectorAll('[data-move]');
-let uScore=document.getElementById("uScore");
-let cScore=document.getElementById("cScore");
-const roundMessage=document.getElementById("roundMessage");
-const gameOverlay=document.getElementById("gameOverlay");
-const gameResultText=document.getElementById("gameResultText");
-const restartGameBtn=document.getElementById("restartGameBtn");
 
-
+// === UI INTERACTIONS ===
 function showGameOverlay(message){
     gameResultText.innerText=message;
     gameOverlay.hidden=false;
@@ -70,11 +36,9 @@ function showRoundMessage(message){
     roundMessage.innerText=message;
 }
 
-restartGameBtn.addEventListener('click',()=>{
-    gameOverlay.hidden=true;
-    showRoundMessage("");
-    resetGame();
-});
+
+
+// === GAME HELPERS ===
 
 //generates computer choice
 const compChoice=()=>{
@@ -98,9 +62,6 @@ function checkWinner(userChoice, computerChoice){
     }
 };
 
-
-
-
 //fn to check if game is over
 function checkGameOver(){
     if(gameState.userScore===gameState.winsNeeded){
@@ -113,13 +74,21 @@ function checkGameOver(){
     }
 };
 
-//fn to show round message
-function showRoundMessage(message){
-    roundMessage.innerText=message;
+//resets the game
+function resetGame() {
+    console.log("Resetting game...");
+  // Reset scores and game state here
+    gameState.userScore = 0;
+    gameState.compScore = 0;
+    gameState.isOver = false;
+
+    uScore.innerText = 0;
+    cScore.innerText = 0;
+    showRoundMessage("");
 }
 
 
-//play area
+// === Main Game Logic ===
 function playGame (userChoice){
     if(gameState.isOver) return;
 
@@ -149,7 +118,39 @@ function playGame (userChoice){
 
 };
 
+
+
+// === EVENT LISTENERS ===
+
+toggleBtn.addEventListener("click", () => {
+  roundSelector.classList.toggle("open");
+
+  const expanded = roundSelector.classList.contains("open");
+  toggleBtn.setAttribute("aria-expanded", expanded);
+});
+
+document.querySelectorAll("[data-rounds]").forEach(btn => {
+    btn.addEventListener("click", () => {
+    const rounds = Number(btn.dataset.rounds);
+    console.log("Game rounds:", rounds);
+
+    gameState.maxRounds = rounds;
+    gameState.winsNeeded = Math.ceil(rounds / 2);
+    resetGame()
+
+    // close menu
+    roundSelector.classList.remove("open");
+  });
+});
+
 choices.forEach(choice => choice.addEventListener('click', ()=>{
     const userChoice= choice.dataset.move;
     playGame(userChoice);
 }));
+
+restartGameBtn.addEventListener('click',()=>{
+    gameOverlay.hidden=true;
+    showRoundMessage("");
+    resetGame();
+});
+
