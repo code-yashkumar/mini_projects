@@ -28,12 +28,12 @@ const gameState={
 
 // === UI INTERACTIONS ===
 function showGameOverlay(message){
-    gameResultText.innerText=message;
+    gameResultText.textContent=message;
     gameOverlay.hidden=false;
 }
 
 function showRoundMessage(message){
-    roundMessage.innerText=message;
+    roundMessage.textContent=message;
 }
 
 
@@ -81,6 +81,7 @@ function resetGame() {
     gameState.userScore = 0;
     gameState.compScore = 0;
     gameState.isOver = false;
+    gameState.winsNeeded = Math.ceil(gameState.maxRounds / 2);
 
     uScore.innerText = 0;
     cScore.innerText = 0;
