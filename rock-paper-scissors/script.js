@@ -56,6 +56,9 @@ const gameState={
 const choices =document.querySelectorAll('[data-move]');
 let uScore=document.getElementById("uScore");
 let cScore=document.getElementById("cScore");
+const computerMoveImage=document.getElementById("computerMoveImage");
+const roboMoveText=document.querySelector(".roboMoveText");
+
 const roundMessage=document.getElementById("roundMessage");
 const gameOverlay=document.getElementById("gameOverlay");
 const gameResultText=document.getElementById("gameResultText");
@@ -81,7 +84,15 @@ restartGameBtn.addEventListener('click',()=>{
 const compChoice=()=>{
     const choiceArray=["rock","paper","scissors"];
     const randomIndex=Math.floor(Math.random()*3);
-    return choiceArray[randomIndex];
+    let computerChoice=choiceArray[randomIndex];
+    updateImage(computerChoice);
+    roboMoveText.textContent=computerChoice;
+    return computerChoice;
+};
+
+//fn to update computer choice image
+function updateImage(computerChoice){
+    computerMoveImage.src=`assets/robo_${computerChoice}.png`;
 };
 
 //fn that tells who won

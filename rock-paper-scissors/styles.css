@@ -165,6 +165,7 @@ h3{
     font-family: "Prestigious", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 4rem;
     color: #3EC5FF;
+    text-transform: capitalize;
 }
 
 
