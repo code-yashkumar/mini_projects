@@ -19,6 +19,8 @@ function resetGame() {
     gameState.compScore = 0;
     gameState.isOver = false;
     gameState.winsNeeded = Math.ceil(gameState.maxRounds / 2);
+    computerMoveImage.src = 'assets/defaultImg.png';
+    roboMoveText.textContent = '';
 
     uScore.innerText = 0;
     cScore.innerText = 0;

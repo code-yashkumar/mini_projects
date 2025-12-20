@@ -95,6 +95,8 @@ function resetGame() {
 
     uScore.innerText = 0;
     cScore.innerText = 0;
+    computerMoveImage.src = 'assets/defaultImg.png';
+    roboMoveText.textContent = '';
     showRoundMessage("");
 }
 
