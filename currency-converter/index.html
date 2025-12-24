@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="src/output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+<body class="bg-gray-200 dark:bg-gray-800 text-white">
+
+    <h1 class="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">Currency Converter</h1>
+    <main class="text-center">
+        <p>Exchange From</p>
+        <div class="from-container">
+            <div class="from-country-box"></div>
+            <div class="from-amount-box">
+                <input type="number" class="from-amount-input" placeholder="Enter amount" />
+            </div>
+        </div>
+        <button class="swap-button"></button>
+        <p>Exchange To</p>
+        <div class="to-container">
+            <div class="to-country-box"></div>
+            <div class="to-amount-box">
+                <input type="number" class="to-amount-input" placeholder="Converted amount" readonly />
+            </div>
+        </div>
+        <section>
+            <p>Exchange Rate: <div class="exchange-rate">0.00</div></p>
+        </section>
+        <button class="convert-button">Convert</button>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

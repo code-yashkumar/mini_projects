@@ -1,0 +1,7 @@
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+.flex {
+  display: flex;
+}
+.text-center {
+  text-align: center;
+}
