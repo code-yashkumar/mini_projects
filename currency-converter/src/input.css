@@ -1,3 +1,20 @@
-@tailwind base;
-@tailwind components;   
-@tailwind utilities;
+@import "tailwindcss";
+
+@font-face {
+  font-family: "sporten";
+  src: url("../assets/sporten.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+:root {
+  --font-sporten: "sporten", sans-serif;
+  --bgblue: #00275E;
+  --strap: #000C35;
+  --grey: #323232;
+  --lgrey: #898989;
+  --accent: #004A90;
+  --accentbg: #E1F0FF;
+  --borderblue: #00559F;
+}
