@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="src/output.css">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
-<body class="flex flex-col items-center bg-[var(--bgblue)] min-h-screen text-white p-4">
+<body class="flex flex-col items-center bg-(--bgblue) min-h-screen text-white pt-16">
 
-    <h1 class="font-[family-name:var(--font-sporten)] text-3xl">Currency Converter</h1>
-    <main class="text-center ">
-        <p>Exchange From</p>
+    <h1 class="font-sporten text-[3rem]">CURRENCY CONVERTER</h1>
+    <main class="text-center bg-white text-black rounded-4xl p-6 mt-8 w-[70%] max-w-sm outline-(--borderblue) outline-14">
+
+        <p class="text-left text-(--grey) text-lg text-medium">Convert From</p>
         <div class="from-container">
             <div class="from-country-box"></div>
             <div class="from-amount-box">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <button class="swap-button"></button>
-        <p>Exchange To</p>
+        <p>Convert To</p>
         <div class="to-container">
             <div class="to-country-box"></div>
             <div class="to-amount-box">

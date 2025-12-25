@@ -8,7 +8,7 @@
 }
 
 
-:root {
+@theme {
   --font-sporten: "sporten", sans-serif;
   --bgblue: #00275E;
   --strap: #000C35;
