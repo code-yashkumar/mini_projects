@@ -12,9 +12,15 @@
   --font-sporten: "sporten", sans-serif;
   --bgblue: #00275E;
   --strap: #000C35;
-  --grey: #323232;
-  --lgrey: #898989;
+  --grey: #5c5c5c;
+  --lgrey: #9e9e9e;
   --accent: #004A90;
   --accentbg: #E1F0FF;
   --borderblue: #00559F;
+}
+
+@layer components{
+  .currency-row{
+    @apply  outline-(--lgrey) outline-1 rounded-[1vw] flex items-center p-4 my-1 justify-between
+  }
 }

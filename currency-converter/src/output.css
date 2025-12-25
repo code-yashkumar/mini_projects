@@ -11,19 +11,18 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-sm: 24rem;
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
     --text-base--line-height: calc(1.5 / 1);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
+    --font-weight-semibold: 600;
     --radius-4xl: 2rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-sporten: "sporten", sans-serif;
     --bgblue: #00275E;
-    --grey: #323232;
-    --lgrey: #898989;
+    --grey: #5c5c5c;
+    --lgrey: #9e9e9e;
+    --accent: #004A90;
+    --accentbg: #E1F0FF;
     --borderblue: #00559F;
   }
 }
@@ -176,14 +175,27 @@
   }
 }
 @layer utilities {
+  .my-1 {
+    margin-block: calc(var(--spacing) * 1);
+  }
+  .my-4 {
+    margin-block: calc(var(--spacing) * 4);
+  }
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
+  }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
+  }
+  .mb-1 {
+    margin-bottom: calc(var(--spacing) * 1);
   }
   .flex {
     display: flex;
   }
-  .table {
-    display: table;
+  .size-14 {
+    width: calc(var(--spacing) * 14);
+    height: calc(var(--spacing) * 14);
   }
   .min-h-screen {
     min-height: 100vh;
@@ -194,24 +206,29 @@
   .max-w-sm {
     max-width: var(--container-sm);
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .resize {
-    resize: both;
-  }
   .flex-col {
     flex-direction: column;
   }
   .items-center {
     align-items: center;
   }
+  .justify-between {
+    justify-content: space-between;
+  }
   .rounded-4xl {
     border-radius: var(--radius-4xl);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .rounded-\[1vw\] {
+    border-radius: 1vw;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .bg-\(--accent\) {
+    background-color: var(--accent);
+  }
+  .bg-\(--accentbg\) {
+    background-color: var(--accentbg);
   }
   .bg-\(--bgblue\) {
     background-color: var(--bgblue);
@@ -219,11 +236,20 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
   .p-4 {
     padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
@@ -234,9 +260,6 @@
   .text-left {
     text-align: left;
   }
-  .font-\(family-name\:--font-sporten\) {
-    font-family: var(--font-sporten);
-  }
   .font-sporten {
     font-family: var(--font-sporten);
   }
@@ -244,31 +267,15 @@
     font-size: var(--text-base);
     line-height: var(--tw-leading, var(--text-base--line-height));
   }
-  .text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--tw-leading, var(--text-lg--line-height));
-  }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
   .text-\[3rem\] {
     font-size: 3rem;
   }
-  .text-\(--bgbl\) {
-    color: var(--bgbl);
-  }
-  .text-\(--bgblue\) {
-    color: var(--bgblue);
-  }
-  .text-\(--g\) {
-    color: var(--g);
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-\(--grey\) {
     color: var(--grey);
-  }
-  .text-\(--lgrey\) {
-    color: var(--lgrey);
   }
   .text-black {
     color: var(--color-black);
@@ -276,10 +283,7 @@
   .text-white {
     color: var(--color-white);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
+  .outline-1 {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
@@ -290,6 +294,9 @@
   .outline-\(--borderblue\) {
     outline-color: var(--borderblue);
   }
+  .outline-\(--lgrey\) {
+    outline-color: var(--lgrey);
+  }
 }
 @font-face {
   font-family: "sporten";
@@ -297,10 +304,22 @@
   font-weight: normal;
   font-style: normal;
 }
-@property --tw-border-style {
+@layer components {
+  .currency-row {
+    margin-block: calc(var(--spacing) * 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1vw;
+    padding: calc(var(--spacing) * 4);
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+    outline-color: var(--lgrey);
+  }
+}
+@property --tw-font-weight {
   syntax: "*";
   inherits: false;
-  initial-value: solid;
 }
 @property --tw-outline-style {
   syntax: "*";
@@ -310,7 +329,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-outline-style: solid;
     }
   }

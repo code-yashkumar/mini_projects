@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="src/output.css">
 </head>
+
 <body class="flex flex-col items-center bg-(--bgblue) min-h-screen text-white pt-16">
 
     <h1 class="font-sporten text-[3rem]">CURRENCY CONVERTER</h1>
-    <main class="text-center bg-white text-black rounded-4xl p-6 mt-8 w-[70%] max-w-sm outline-(--borderblue) outline-14">
+    <main
+        class="text-center bg-white text-black rounded-4xl p-6 mt-8 w-[70%] max-w-sm outline-(--borderblue) outline-14">
 
-        <p class="text-left text-(--grey) text-lg text-medium">Convert From</p>
-        <div class="from-container">
-            <div class="from-country-box"></div>
+        <p class="text-left text-(--grey) text-base font-semibold">Convert From</p>
+        <div class="currency-row">
+            <div>
+                <select class="bg-(--accentbg) rounded-full flex">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </div>
             <div class="from-amount-box">
                 <input type="number" class="from-amount-input" placeholder="Enter amount" />
             </div>
         </div>
-        <button class="swap-button"></button>
-        <p>Convert To</p>
-        <div class="to-container">
-            <div class="to-country-box"></div>
+        <button class="swap-button rounded-full bg-(--accent) size-14 mt-4 mb-1"></button>
+        <p class="text-left text-(--grey) text-base font-semibold">Convert To</p>
+        <div class="currency-row">
+            <div>
+                <select class="bg-(--accentbg) rounded-full flex">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+            </div>
             <div class="to-amount-box">
                 <input type="number" class="to-amount-input" placeholder="Converted amount" readonly />
             </div>
         </div>
-        <section>
-            <p>Exchange Rate: <div class="exchange-rate">0.00</div></p>
+        <section class="bg-(--accentbg) rounded-full p-2 flex justify-between my-4 items-center px-6">
+            <p>Exchange Rate: </p>
+            <div class="exchange-rate">0.00</div>
         </section>
-        <button class="convert-button">Convert</button>
+        <button class="convert-button rounded-full bg-(--accent) py-3 px-6 text-white">Convert</button>
 
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
