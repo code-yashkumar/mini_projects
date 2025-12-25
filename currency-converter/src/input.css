@@ -21,6 +21,6 @@
 
 @layer components{
   .currency-row{
-    @apply  outline-(--lgrey) outline-1 rounded-[1vw] flex items-center p-4 my-1 justify-between
+    @apply  outline-(--lgrey) outline-1 rounded-[1vw] flex items-center px-4 py-2 my-1 justify-between
   }
 }
