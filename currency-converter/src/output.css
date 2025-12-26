@@ -188,6 +188,9 @@
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
   }
+  .left-1 {
+    left: calc(var(--spacing) * 1);
+  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -208,6 +211,9 @@
   }
   .flex {
     display: flex;
+  }
+  .table {
+    display: table;
   }
   .size-14 {
     width: calc(var(--spacing) * 14);
@@ -240,12 +246,25 @@
   .max-w-lg {
     max-width: var(--container-lg);
   }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .-translate-x-1 {
+    --tw-translate-x: calc(var(--spacing) * -1);
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .rotate-90 {
     rotate: 90deg;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -268,6 +287,10 @@
   .rounded-full {
     border-radius: calc(infinity * 1px);
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .bg-\(--accent\) {
     background-color: var(--accent);
   }
@@ -276,6 +299,9 @@
   }
   .bg-\(--bgblue\) {
     background-color: var(--bgblue);
+  }
+  .bg-\(--borderblue\) {
+    background-color: var(--borderblue);
   }
   .bg-\(--strap\) {
     background-color: var(--strap);
@@ -333,12 +359,54 @@
   .text-white {
     color: var(--color-white);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .outline-14 {
     outline-style: var(--tw-outline-style);
     outline-width: 14px;
   }
   .outline-\(--borderblue\) {
     outline-color: var(--borderblue);
+  }
+  .hover\:bg-\(--accent\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--accent);
+      }
+    }
+  }
+  .hover\:bg-\(--b\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--b);
+      }
+    }
+  }
+  .hover\:bg-\(--blue\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--blue);
+      }
+    }
+  }
+  .hover\:bg-\(--borderblue\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--borderblue);
+      }
+    }
+  }
+  .hover\:bg-\(--strap\) {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--strap);
+      }
+    }
   }
   .lg\:w-\[80\%\] {
     @media (width >= 64rem) {
@@ -392,6 +460,11 @@
   inherits: false;
   initial-value: 0;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -407,8 +480,15 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
     }
   }
+}
+
+
+
+.swap-button {
+  transition: transform 0.4s ease;
 }
