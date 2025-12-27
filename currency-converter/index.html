@@ -1,63 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="src/output.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
 
-<body class="flex flex-col items-center bg-(--bgblue) min-h-screen text-white">
-    <div class="relative min-h-screen flex flex-col items-center justify-center">
+  <body
+    class="flex flex-col items-center bg-(--bgblue) h-screen text-white"
+  >
+    <div
+      class="relative h-screen flex flex-col items-center justify-start pt-12 w-full"
+    >
+      <!-- background decoration -->
+      <div
+        class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-62 bg-(--strap) -z-10 pointer-events-none"
+      ></div>
+      <h1 class="font-sporten text-[2rem] md:text-[3.75rem] text-center">
+        CURRENCY CONVERTER
+      </h1>
 
-        <!-- background decoration -->
-        <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-62 bg-(--strap) -z-10 pointer-events-none"></div>
-        <h1 class="font-sporten text-[3.75rem] text-center">CURRENCY CONVERTER</h1>
+      <div class="mainWrapper mt-8 w-[90%] md:w-[80%] lg:w-[80%] max-w-lg
+         bg-(--borderblue)
+         rounded-[3.5rem]
+         p-3 md:p-4 lg:p-5">
         <main
-            class="text-center bg-white text-black rounded-4xl p-6 lg:p-8 mt-8 w-[70%] lg:w-[80%] max-w-lg outline-(--borderblue) outline-14 lg:outline-18">
-
-            <p class="text-left text-(--grey) text-base font-semibold">Convert From</p>
-            <div class="currency-row">
-                <div class="bg-(--accentbg) rounded-full flex px-4 h-14 items-center">
-                    <div class="w-10 h-10 overflow-hidden flex items-center justify-center rounded-full">
-                        <img src="https://flagsapi.com/US/flat/64.png" class="w-13 h-20 object-cover rounded-full">
-                    </div>
-                    <select name="from" class="from-select"></select>
-                </div>
-                <form class="from-amount-box">
-                    <input type="number" class="from-amount-input text-center" placeholder="Enter amount" />
-                </form>
+          class="text-center bg-white text-black
+           rounded-[3rem]
+           p-6 lg:p-8"
+        >
+          <p class="text-left text-(--grey) text-base font-semibold">
+            Convert From
+          </p>
+          <div class="currency-row">
+            <div
+              class="bg-(--accentbg) rounded-full flex px-4 h-14 items-center"
+            >
+              <div
+                class="w-10 h-10 overflow-hidden flex items-center justify-center rounded-full"
+              >
+                <img
+                  src="https://flagsapi.com/US/flat/64.png"
+                  class="w-13 h-20 object-cover rounded-full"
+                />
+              </div>
+              <select name="from" class="from-select"></select>
             </div>
-            <button class="swap-button rounded-full bg-(--accent) size-14 mt-4 mb-1">
-                <i class="fa-solid fa-arrow-right-arrow-left rotate-90 text-white"></i>
-            </button>
-            <p class="text-left text-(--grey) text-base font-semibold">Convert To</p>
-            <div class="currency-row">
-                <div class="bg-(--accentbg) rounded-full flex px-4 h-14 items-center">
-                    <div class="w-10 h-10 overflow-hidden flex items-center justify-center rounded-full">
-                        <img src="https://flagsapi.com/IN/flat/64.png" class="w-13 h-20 object-cover rounded-full">
-                    </div>
-                    <select name="to" class="to-select"></select>
-                </div>
-                <div class="to-amount-box">
-                    <input type="number" class="to-amount-input text-center" placeholder="Converted amount" readonly />
-                </div>  
+            <form class="from-amount-box">
+              <input
+                type="number"
+                class="from-amount-input text-center"
+                placeholder="Enter amount"
+              />
+            </form>
+          </div>
+          <button class="swap-button rounded-full bg-(--accent) size-14 mt-4 mb-1 transition-transform duration-400 ease-out">
+            <i class="fa-solid fa-arrow-right-arrow-left rotate-90 text-white"></i>
+          </button>
+          <p class="text-left text-(--grey) text-base font-semibold">
+            Convert To
+          </p>
+          <div class="currency-row">
+            <div
+              class="bg-(--accentbg) rounded-full flex px-4 h-14 items-center"
+            >
+              <div
+                class="w-10 h-10 overflow-hidden flex items-center justify-center rounded-full"
+              >
+                <img
+                  src="https://flagsapi.com/IN/flat/64.png"
+                  class="w-13 h-20 object-cover rounded-full"
+                />
+              </div>
+              <select name="to" class="to-select"></select>
             </div>
-            <section class="bg-(--accentbg) rounded-full p-2 flex justify-between my-4 items-center px-6">
-                <p>Exchange Rate: </p>
-                <div class="exchange-rate">0.00</div>
-            </section>
-            <button id="convert-button" class="cursor-pointer hover:bg-(--accent) rounded-full bg-(--borderblue) py-3 px-6 text-white">Convert</button>
-
+            <div class="to-amount-box">
+              <input
+                type="number"
+                class="to-amount-input text-center"
+                placeholder="Converted amount"
+                readonly
+              />
+            </div>
+          </div>
+          <section
+            class="bg-(--accentbg) rounded-full p-2 flex justify-between my-4 items-center px-6"
+          >
+            <p>Exchange Rate:</p>
+            <div class="exchange-rate">0.00</div>
+          </section>
+          <button
+            id="convert-button"
+            class="cursor-pointer hover:bg-(--accent) rounded-full bg-(--borderblue) py-3 px-6 text-white"
+          >
+            Convert
+          </button>
         </main>
-
-        <script src="codes.js"></script>
-        <script src="script.js"></script>
+      </div>
+      <script src="codes.js"></script>
+      <script src="script.js"></script>
     </div>
-</body>
-
+  </body>
 </html>
