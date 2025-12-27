@@ -9,11 +9,6 @@ const toAmtInput=document.querySelector(".to-amount-input");
 const swapBtn=document.querySelector(".swap-button");
 const form = document.querySelector(".from-amount-box");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();   // 🔥 stops page reload
-  convert();            // 🔥 Enter triggers conversion
-});
-
 
 // for(code in countryList){
 //     console.log(code, countryList[code]);
@@ -52,6 +47,7 @@ const updateRates=(rate)=>{
 
 
 let rotation=0;
+
 swapBtn.addEventListener("click", ()=>{
     rotation+=180;
     swapBtn.style.transform=`rotate(${rotation}deg)`;
@@ -61,6 +57,7 @@ swapBtn.addEventListener("click", ()=>{
     toCurr.value=temp;
     updateFlag(fromCurr);
     updateFlag(toCurr);
+    convert();
 });
 
 async function convert(){
@@ -78,6 +75,10 @@ async function convert(){
     // console.log("data:", data);
     let rate=data[fromCurr.value.toLowerCase()][toCurr.value.toLowerCase()];
     // let rate=data["usd"]["inr"];
+    if (!rate) {
+        exchangeRateText.innerText = "Rate unavailable";
+        return;
+    }
     console.log("rate:", rate);
     let convertedAmount=(amount*rate).toFixed(2);
     toAmtInput.value=convertedAmount;

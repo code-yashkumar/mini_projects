@@ -12,7 +12,7 @@
 </head>
 
 <body class="flex flex-col items-center bg-(--bgblue) min-h-screen text-white">
-    <div class="relative min-h-screen flex flex-col items-center pt-16">
+    <div class="relative min-h-screen flex flex-col items-center justify-center">
 
         <!-- background decoration -->
         <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-62 bg-(--strap) -z-10 pointer-events-none"></div>
@@ -29,7 +29,7 @@
                     <select name="from" class="from-select"></select>
                 </div>
                 <form class="from-amount-box">
-                    <input type="number" class="from-amount-input" placeholder="Enter amount" />
+                    <input type="number" class="from-amount-input text-center" placeholder="Enter amount" />
                 </form>
             </div>
             <button class="swap-button rounded-full bg-(--accent) size-14 mt-4 mb-1">
@@ -44,7 +44,7 @@
                     <select name="to" class="to-select"></select>
                 </div>
                 <div class="to-amount-box">
-                    <input type="number" class="to-amount-input" placeholder="Converted amount" readonly />
+                    <input type="number" class="to-amount-input text-center" placeholder="Converted amount" readonly />
                 </div>  
             </div>
             <section class="bg-(--accentbg) rounded-full p-2 flex justify-between my-4 items-center px-6">
