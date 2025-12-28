@@ -38,7 +38,7 @@ This project focuses on **API integration, DOM manipulation, and responsive layo
 ## 📸 Preview
 
 Optimized for both **desktop and mobile screens**, featuring a custom-designed layout with a fixed background strap and card-based UI.
-![alt text](image.png)
+![alt text](assets/image.png)
 
 ---
 
