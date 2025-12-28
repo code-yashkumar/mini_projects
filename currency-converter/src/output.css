@@ -107,7 +107,6 @@
   }
   img, svg, video, canvas, audio, iframe, embed, object {
     display: block;
-    vertical-align: middle;
   }
   img, video {
     max-width: 100%;
@@ -194,9 +193,6 @@
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
   }
-  .left-1 {
-    left: calc(var(--spacing) * 1);
-  }
   .left-1\/2 {
     left: calc(1/2 * 100%);
   }
@@ -205,9 +201,6 @@
   }
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
-  }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
   }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
@@ -220,9 +213,6 @@
   }
   .flex {
     display: flex;
-  }
-  .table {
-    display: table;
   }
   .size-14 {
     width: calc(var(--spacing) * 14);
@@ -237,17 +227,8 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
-  .h-\[100\] {
-    height: 100;
-  }
-  .h-\[100dvh\] {
-    height: 100dvh;
-  }
   .h-screen {
     height: 100vh;
-  }
-  .min-h-screen {
-    min-height: 100vh;
   }
   .w-10 {
     width: calc(var(--spacing) * 10);
@@ -258,15 +239,6 @@
   .w-62 {
     width: calc(var(--spacing) * 62);
   }
-  .w-\[70\%\] {
-    width: 70%;
-  }
-  .w-\[80\%\] {
-    width: 80%;
-  }
-  .w-\[85\%\] {
-    width: 85%;
-  }
   .w-\[90\%\] {
     width: 90%;
   }
@@ -276,19 +248,9 @@
   .max-w-lg {
     max-width: var(--container-lg);
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
-  .-translate-x-1 {
-    --tw-translate-x: calc(var(--spacing) * -1);
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
   .-translate-x-1\/2 {
     --tw-translate-x: calc(calc(1/2 * 100%) * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .rotate-9 {
-    rotate: 9deg;
   }
   .rotate-90 {
     rotate: 90deg;
@@ -298,9 +260,6 @@
   }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -320,9 +279,6 @@
   .overflow-hidden {
     overflow: hidden;
   }
-  .rounded-4xl {
-    border-radius: var(--radius-4xl);
-  }
   .rounded-\[3\.5rem\] {
     border-radius: 3.5rem;
   }
@@ -331,10 +287,6 @@
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .bg-\(--accent\) {
     background-color: var(--accent);
@@ -378,18 +330,6 @@
   .pt-12 {
     padding-top: calc(var(--spacing) * 12);
   }
-  .pt-\[env\(safe-area-inset-top\)\] {
-    padding-top: env(safe-area-inset-top);
-  }
-  .pt-\[env\] {
-    padding-top: env;
-  }
-  .pb-12 {
-    padding-bottom: calc(var(--spacing) * 12);
-  }
-  .pb-\[env\(safe-area-inset-top\)\] {
-    padding-bottom: env(safe-area-inset-top);
-  }
   .text-center {
     text-align: center;
   }
@@ -418,20 +358,6 @@
   }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-  .outline-14 {
-    outline-style: var(--tw-outline-style);
-    outline-width: 14px;
-  }
-  .outline-\(--borderblue\) {
-    outline-color: var(--borderblue);
   }
   .transition-transform {
     transition-property: transform, translate, scale, rotate;
@@ -481,12 +407,6 @@
   .lg\:p-8 {
     @media (width >= 64rem) {
       padding: calc(var(--spacing) * 8);
-    }
-  }
-  .lg\:outline-18 {
-    @media (width >= 64rem) {
-      outline-style: var(--tw-outline-style);
-      outline-width: 18px;
     }
   }
 }
@@ -545,19 +465,9 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 @property --tw-duration {
   syntax: "*";
@@ -566,6 +476,11 @@
 @property --tw-ease {
   syntax: "*";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
@@ -578,11 +493,10 @@
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
-      --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-outline-style: solid;
       --tw-duration: initial;
       --tw-ease: initial;
+      --tw-outline-style: solid;
     }
   }
 }
